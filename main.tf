@@ -11,3 +11,13 @@ terraform {
 provider "aws" {
   region = "us-east-1"
 }
+
+# Create a S3 bucket
+resource "aws_s3_bucket" "the-cloud-resume-challenge-terraform" {
+  bucket = "the-cloud-resume-challenge-terraform"
+
+  tags = {
+    Name        = "The cloud resume challenge"
+    Environment = "Dev"
+  }
+}
